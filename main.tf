@@ -88,10 +88,9 @@ resource "aws_security_group" "bastion_sg" {
 }
 
 
-variable key_name {}
 
 resource "aws_key_pair" "test-keypair" {
-  key_name   = var.key_name
+  key_name   = "awstestkey"
   public_key = file("~/.ssh/id_rsa.pub")  # Specify the path to your public key
 }
 
